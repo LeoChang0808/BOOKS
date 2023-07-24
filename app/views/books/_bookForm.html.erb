@@ -1,0 +1,19 @@
+<%= form_with( model:@book , data: { turbo: false } ) do |f| %>
+    <div>
+        <%= f.label :title, "書名" %>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :content, "摘要" %>
+        <%= f.text_area :content %>
+    </div>
+    <div>
+        <%= f.label :page, "頁數" %>
+        <%= f.number_field :page , min:0%>
+    </div>
+    <div>
+        <%= f.label :price, "價錢" %>
+        <%= f.number_field :price, min:0 %>
+    </div>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>BOOKS LIST</h1>
+
+<%= link_to '新增書籍', new_book_path %>
+
+<ul>
+    <% @books.each do |book| %>
+        <li>
+            <%= link_to book.title, book_path(book.id) %>
+            <%= link_to "修改", edit_book_path(book.id) %>
+            <%= link_to "刪除", book_path(book.id), data: { turbo_method:"delete", turbo_confirm:"你確定要刪吼??" } %>
+        </li>
+    <% end %>
+</ul>
